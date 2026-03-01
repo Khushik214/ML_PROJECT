@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="hero">
+    <h1>Your Heart Health Dashboard</h1>
+    <p class="subtitle">Real-time indicators and predictive intelligence for a balanced life.</p>
+</div>
+
+<div class="container">
+    <div class="dashboard-grid">
+        <!-- Model Accuracy Card -->
+        <div class="card metric-card highlight-card">
+            <div class="metric-visual">
+                <svg class="heart-pulse" viewBox="0 0 24 24">
+                    <path
+                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+            </div>
+            <div class="metric-info">
+                <h3>Prediction Accuracy</h3>
+                <div class="value">84.2%</div>
+                <p>Based on 70,000+ validated clinical records.</p>
+            </div>
+        </div>
+
+        <!-- Performance Stats -->
+        <div class="card metric-card">
+            <h3>Model Confidence</h3>
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 88%"></div>
+            </div>
+            <div class="metric-meta">
+                <span>Precision: 88%</span>
+                <span>Recall: 82%</span>
+            </div>
+        </div>
+
+        <!-- Start CTA -->
+        <div class="card metric-card centered-card">
+            <h2>Ready for an Assessment?</h2>
+            <p>Our AI analyzes 11 key biometrics to estimate your cardiovascular risk levels.</p>
+            <a href="{{ url_for('prediction_page') }}" class="submit-btn action-cta">Start Assessment</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

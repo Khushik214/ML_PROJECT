@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="hero">
+    <h1>Transparency & Methodology</h1>
+    <p class="subtitle">How our intelligence works, its limits, and the standards we uphold.</p>
+</div>
+
+<div class="container">
+    <section class="card content-card">
+        <h2>The Model</h2>
+        <p>Our system utilizes a Classification model trained on a curated clinical dataset of over 70,000 health
+            entries. By analyzing correlations between biometrics (BP, cholesterol) and historical outcomes, it provides
+            an estimate of risk probability.</p>
+
+        <h2 class="mt-4">Limitations</h2>
+        <p>While statistically accurate (84%+), this tool is a predictive algorithm based on population trends. It
+            cannot account for individual genetic nuances, recent life events, or sudden physiological changes.</p>
+
+        <div class="alert warning mt-4">
+            <strong>Ethical Notice:</strong> We do not store or sell your personal health metrics. All calculations are
+            ephemeral and utilized only for the duration of your session.
+        </div>
+    </section>
+</div>
+{% endblock %}

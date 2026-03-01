@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="hero">
+    <h1>Important Caution</h1>
+    <p class="subtitle">A brief reminder on the intended use of this technology.</p>
+</div>
+
+<div class="container">
+    <section class="card caution-card">
+        <h2 class="danger-text">Not a Medical Diagnosis</h2>
+        <p>This application is strictly an educational and data visualization tool. It provides a statistical estimate
+            of heart disease risk based on historical dataset trends.</p>
+
+        <div class="caution-steps">
+            <div class="step">
+                <strong>1. Consult a Doctor</strong>
+                <p>If you have health concerns, symptoms, or a history of illness, seek professional medical attention
+                    immediately.</p>
+            </div>
+            <div class="step">
+                <strong>2. Use as Support</strong>
+                <p>Only use these results as a conversation starter with a qualified healthcare provider.</p>
+            </div>
+        </div>
+
+        <div class="alert caution-alert mt-4">
+            <strong>Disclaimer:</strong> The developers and creators of this tool are not liable for any health
+            decisions made based on this software.
+        </div>
+    </section>
+</div>
+{% endblock %}

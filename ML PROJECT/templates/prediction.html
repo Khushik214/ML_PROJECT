@@ -1,0 +1,116 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="hero">
+    <h1>Health Assessment</h1>
+    <p class="subtitle">Complete the fields below to receive an intelligence-backed heart health risk report.</p>
+</div>
+
+<div class="container main-content">
+    <section id="form-section" class="card form-section shadow-lg">
+        <h2>Primary Indicators</h2>
+        <p class="form-instruction">All data stays local and is not permanently stored.</p>
+
+        <form id="predictionForm">
+            <div class="form-grid">
+                <!-- Age -->
+                <div class="form-group">
+                    <label for="age">Age (Years)</label>
+                    <input type="number" id="age" name="age" placeholder="e.g. 45" min="10" max="100" required>
+                </div>
+
+                <!-- Gender -->
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select</option>
+                        <option value="1">Female</option>
+                        <option value="2">Male</option>
+                    </select>
+                </div>
+
+                <!-- Height -->
+                <div class="form-group">
+                    <label for="height">Height (cm)</label>
+                    <input type="number" id="height" name="height" placeholder="170" required>
+                </div>
+
+                <!-- Weight -->
+                <div class="form-group">
+                    <label for="weight">Weight (kg)</label>
+                    <input type="number" id="weight" name="weight" placeholder="70" required>
+                </div>
+
+                <!-- Systolic BP -->
+                <div class="form-group">
+                    <label for="ap_hi">Systolic BP (mmHg)</label>
+                    <input type="number" id="ap_hi" name="ap_hi" placeholder="120" required>
+                </div>
+
+                <!-- Diastolic BP -->
+                <div class="form-group">
+                    <label for="ap_lo">Diastolic BP (mmHg)</label>
+                    <input type="number" id="ap_lo" name="ap_lo" placeholder="80" required>
+                </div>
+
+                <!-- Cholesterol -->
+                <div class="form-group">
+                    <label for="cholesterol">Cholesterol</label>
+                    <select id="cholesterol" name="cholesterol" required>
+                        <option value="1">Normal</option>
+                        <option value="2">Above Normal</option>
+                        <option value="3">Well Above Normal</option>
+                    </select>
+                </div>
+
+                <!-- Glucose -->
+                <div class="form-group">
+                    <label for="gluc">Glucose</label>
+                    <select id="gluc" name="gluc" required>
+                        <option value="1">Normal</option>
+                        <option value="2">Above Normal</option>
+                        <option value="3">Well Above Normal</option>
+                    </select>
+                </div>
+
+                <!-- Lifestyle Checkboxes -->
+                <div class="form-group full-width">
+                    <label>Lifestyle Context</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-box">
+                            <input type="checkbox" id="smoke" name="smoke">
+                            <span>Smoker</span>
+                        </label>
+                        <label class="checkbox-box">
+                            <input type="checkbox" id="alco" name="alco">
+                            <span>Alcohol Intake</span>
+                        </label>
+                        <label class="checkbox-box">
+                            <input type="checkbox" id="active" name="active" checked>
+                            <span>Active Lifestyle</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">Generate Prediction</button>
+        </form>
+    </section>
+
+    <!-- Result Section -->
+    <section id="resultSection" class="card result-section hidden">
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Processing metrics...</p>
+        </div>
+
+        <div id="resultContent" class="hidden">
+            <h2 id="resultTitle">Report Summary</h2>
+            <div id="resultBadge" class="result-badge"></div>
+            <p id="resultText"></p>
+            <div id="confidenceBox" class="confidence-box"></div>
+            <button onclick="window.location.reload()" class="retry-btn">Reset Form</button>
+        </div>
+    </section>
+</div>
+{% endblock %}
